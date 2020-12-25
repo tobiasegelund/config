@@ -1,0 +1,25 @@
+{
+	"auto_show_diagnostics_panel": "saved",
+	"auto_show_diagnostics_panel_level": 1,
+	"clients":
+	{
+		"pyls":
+		{
+			"enabled": true
+		}
+	},
+	"complete_all_chars": false,
+	"completion_hint_type": "none",
+	"diagnostics_gutter_marker": "dot",
+	"diagnostics_highlight_style": "box",
+	"disabled_capabilities":
+	[
+		"hover",
+		"completion",
+		"colorProvider",
+		"documentHighlight",
+		"signatureHelp"
+	],
+	"show_diagnostics_severity_level": 1
+}
+

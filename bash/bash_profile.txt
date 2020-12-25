@@ -1,0 +1,31 @@
+
+
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+unset TMUX
+export PATH
+export QT_MAC_WANTS_LAYER=1
+source ~/.fzf.bash
+export FZF_DEFAULT_OPTS="--extended"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --info inline --preview 'cat {}'"
+# export FZF_DEFAULT_OPTS="--height 40% --layout reverse --info inline --border  --preview 'file {}' --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899'"
+
+alias ml='deactivate &> /dev/null; source ~/ML/venv/bin/activate'
+alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias de='deactivate'
+alias psql='psql postgres'
+alias la='ls -l'
+alias lc='find . -type f -exec wc -l {} +'
+alias jn='jupyter notebook'
+alias pie='ssh pi@tobiasegelund.local'
+
+# tmux commands
+alias tls='tmux ls'
+alias tkill='tmux kill-session -t'
+alias tnew='tmux new -s'
+alias tat='tmux attach -t'
+alias tde='tmux detach'
+alias tsw='tmux switch -t'

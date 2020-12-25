@@ -1,0 +1,21 @@
+"A File Icon",
+"Anaconda",
+"AutoFileName",
+"Emnet",
+"Git",
+"Git Commit Message Syntax",
+"GitGutter",
+"LSP",
+"Material Color Scheme",
+"Materialize",
+"Package Control",
+"Predawn",
+"SideBarEnhancements",
+"SublimeLinter",
+"SublimeLinter-flake8",
+"Theme - SoDaReloaded",
+"Tomorrow Color Schemes",
+"Zzz A File Icon zzz"
+
+# Install flake8 through pip as well
+# Ubuntu Font
