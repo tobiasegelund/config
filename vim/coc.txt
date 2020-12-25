@@ -1,0 +1,23 @@
+{
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.jediEnabled": false,
+  "diagnostic.errorSign": "✘",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+
+  "python.linting.flake8Args": [
+    "--ignore=D205,D100,D102,D105,D106,D107,E501"
+  ],
+
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.removeDuplicateItems": true,
+
+  "html.enable":true,
+  "html.validate.scripts": true,
+  "html.format.enable":true,
+
+  "coc.preferences.colorSupport": true
+}
