@@ -1,30 +1,48 @@
-
-# Setting PATH for Python 3.8
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
 unset TMUX
-export PATH
-export QT_MAC_WANTS_LAYER=1 # Spyder setting
-source ~/.fzf.bash
 export FZF_DEFAULT_OPTS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --info inline --preview 'cat {}'"
 [ "$VIMRUNTIME" ] && [ "$VIRTUAL_ENV" ] && source "$VIRTUAL_ENV/bin/activate"
 
-# ag
+# SETTINGS
+source ~/.bash_prompt
+source ~/.fzf.bash
+
+# GIT
+alias g="git"
+alias gs="git status"
+alias gd="git diff"
+alias gb="git branch"
+alias gc="git checkout"
+alias gp="git push"
+alias gm="git checkout master"
+alias gl="git log --graph --all"
+
+# AG
 alias ag='ag --nogroup'
 
+# ENV
 alias ml='deactivate &> /dev/null; source ~/ML/venv/bin/activate'
-alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias ae='deactivate &> /dev/null; source ./env/bin/activate'
 alias de='deactivate'
-alias psql='psql postgres'
+
+# BASH
 alias la='ls -l'
 alias lah='ls -lah'
-alias jn='jupyter notebook'
+alias path='echo -e ${PATH//:/\\n}'
+alias bashprofile="vi ~/.bash_profile && . ~/.bash_profile"
+
+# NAVIGATE
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# SSH
 alias pie='ssh pi@tobiasegelund.local'
 
-# tmux commands
+# TMUX
 alias tls='tmux ls'
 alias tkill='tmux kill-session -t'
 alias tnew='tmux new -s'
