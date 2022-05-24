@@ -4,8 +4,8 @@
     "python_interpreter": "/usr/local/bin/python3.9",
     "extra_paths": ["$VIRTUAL_ENV/bin/python"],
 
-    "auto_formatting": true,
-    "anaconda_linter_phantoms": true,
+    "auto_formatting": false,
+    "anaconda_linter_phantoms": false,
     "anaconda_linter_show_errors_on_save": false,
     "anaconda_linting_behaviour": "load-save",
     "anaconda_linter_mark_style": "solid_underline",
