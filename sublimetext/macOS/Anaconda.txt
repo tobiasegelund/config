@@ -1,12 +1,26 @@
 {
-    "python_interpreter": "/usr/local/bin/python3",
-    "anaconda_linting": false,
-    "pep8": false,
     "swallow_startup_errors": true,
 
-    "disable_anaconda_completion": false,
-    "enable_signatures_tooltip": true,
-    "enable_docstrings_tooltip": true,
-    "display_signatures": false,
-    "merge_signatures_and_doc": true
+    "python_interpreter": "/usr/local/bin/python3.9",
+    "extra_paths": ["$VIRTUAL_ENV/bin/python"],
+
+    "auto_formatting": true,
+    "anaconda_linter_phantoms": true,
+    "anaconda_linter_show_errors_on_save": false,
+    "anaconda_linting_behaviour": "load-save",
+    "anaconda_linter_mark_style": "solid_underline",
+
+    "pep8_ignore":
+    [
+        "E309",
+        "E501",
+        "W503"
+    ],
+
+    "autoformat_ignore":
+    [
+        "E309",
+    ],
+
+    "pep8_max_line_length": 88,
 }

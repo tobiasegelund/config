@@ -15,5 +15,14 @@
   "html.enable":true,
   "html.validate.scripts": true,
   "html.format.enable": true,
-  "clangd.path": "/Users/tobiasegelund/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
+  "clangd.path": "/Users/tobiasegelund/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+  "clangd.enabled": true,
+  "clangd.disableDiagnostics": false,
+
+  "sh.enable": true,
+    {
+      "go.disable": {
+        "workspaceFolders": false
+      }
+    }
 }

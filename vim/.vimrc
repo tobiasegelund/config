@@ -17,7 +17,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
-Plugin 'ryanoasis/vim-devicons'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call vundle#end()
 filetype plugin indent on
@@ -33,7 +32,8 @@ inoremap jk <esc>
 " nnoremap <C-j> <C-w>j
 " nnoremap <C-k> <C-w>k
 " nnoremap <C-l> <C-w>l
-" nnoremap <C-c> <C-w>c
+" nnoremap <c-c> <c-w>c
+nnoremap Y yg_
 nnoremap <silent> <C-m> :<C-u>nohlsearch<CR>
 nnoremap <leader>d :CocDiagnostics<cr>
 " Cycle through buffers with <leader>n and <leader>N
@@ -174,9 +174,9 @@ au BufNewFile,BufRead *.py set autoindent
 au BufNewFile,BufRead *.py set fileformat=unix
 
 " web syntax
-au bufnewfile,bufread *.html, *.css, *.json set tabstop=2
-au BufNewFile,BufRead *.html, *.css, *.json set softtabstop=2
-au BufNewFile,BufRead *.html, *.css, *.json set shiftwidth=2
+au BufNewFile,BufRead *.html,*.css,*.json,*.js set tabstop=2
+au BufNewFile,BufRead *.html,*.css,*.json,*.js set softtabstop=2
+au BufNewFile,BufRead *.html,*.css,*.json,*.js set shiftwidth=2
 
 
 " Keep indentation level from previous line:
