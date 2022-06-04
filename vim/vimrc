@@ -211,16 +211,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
-
 " ignore files
 set wildignore+=*.pyc,*.pyo,*/__pycache__/*     " Python
 set wildignore+=*.swp,~*                        " Temp files
@@ -232,6 +222,7 @@ let g:strip_whitespace_on_save = 1
 " let g:strip_max_file_size = 1000
 let g:strip_whitespace_confirm = 0
 
+nmap <silent> gD :call CocAction('jumpDefinition', 'vsplit')<CR>
 
 " lightline
 let g:lightline = {
