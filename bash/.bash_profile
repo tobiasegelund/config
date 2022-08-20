@@ -1,29 +1,20 @@
 unset TMUX
-export FZF_DEFAULT_OPTS="--extended"
-export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --info inline --preview 'cat {}'"
 [ "$VIMRUNTIME" ] && [ "$VIRTUAL_ENV" ] && source "$VIRTUAL_ENV/bin/activate"
 
 # SETTINGS
 source ~/.bash_prompt
-source ~/.fzf.bash
 
 # GIT
-alias g="git"
+alias ga="git add"
+alias gc="git commit -m "
 alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
-alias gc="git checkout"
 alias gp="git push"
 alias gm="git checkout master"
-alias gl="git log --graph --all"
-
-# AG
-alias ag='ag --nogroup'
+alias gl="git log --oneline --decorate"
 
 # ENV
-alias ml='deactivate &> /dev/null; source ~/ML/venv/bin/activate'
 alias ae='deactivate &> /dev/null; source ./env/bin/activate'
 alias de='deactivate'
 
