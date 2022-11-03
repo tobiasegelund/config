@@ -17,7 +17,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-abolish'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call vundle#end()
 filetype plugin indent on
 
@@ -27,46 +26,22 @@ let mapleader=","
 " Keybindings
 " inoremap kk <esc>
 inoremap jk <esc>
-" inoremap <C-o> <C-r>0
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
-" nnoremap <c-c> <c-w>c
-nnoremap Y yg_
-nnoremap <silent> <C-m> :<C-u>nohlsearch<CR>
 nnoremap <leader>d :CocDiagnostics<cr>
 " Cycle through buffers with <leader>n and <leader>N
-nnoremap <silent> <leader>n :bn<cr>
-nnoremap <silent> <leader>N :bp<cr>
-nnoremap <silent> <leader>l :ls<cr>:b<space>
 
 "macro
 nnoremap <silent> Q @q<cr>
-"delete without clobbering my register
-nnoremap s "_d
-nnoremap S "_d$
-" maps
+"
+;" maps
 inoremap ;1 <c-o>m1
 inoremap ;2 <c-o>m2
-" autocomplete line
-inoremap <c-l> <c-x><c-l><c-n>
-inoremap <c-y> <C-o>dw
-inoremap <c-j> <esc>l<c-v>di
+"
 
 " remove of arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-" Count methods
-map c* *<C-O>:%s///gn<CR>
-map cv* :%s///ng<left><left><left><left>
-
-" For global replace
-nnoremap r* *:%s///g<left><left>
-nnoremap rc* *:%s///gc<left><left><left>
 
 " brackets autocomplete
 " inoremap ( ()<left>
@@ -75,6 +50,7 @@ nnoremap rc* *:%s///gc<left><left><left>
 " inoremap " ""<left>
 " inoremap ' ''<left>
 inoremap {<CR> {<CR>}<ESC>O
+inoremap {; {<CR>};<ESC>O
 inoremap [<CR> [<CR>]<ESC>O
 
 " search for current selection
@@ -85,27 +61,6 @@ function! s:VSetSearch(cmdtype)
   let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
-
-" fzf
-nnoremap <silent> <leader>f :FZF<esc>
-let g:fzf_action = {
-  \ 'ctrl-h': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'down': '30%' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
 
 " colorschemes
 " colorscheme molokai
