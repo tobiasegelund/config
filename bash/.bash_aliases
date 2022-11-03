@@ -1,9 +1,3 @@
-unset TMUX
-[ "$VIMRUNTIME" ] && [ "$VIRTUAL_ENV" ] && source "$VIRTUAL_ENV/bin/activate"
-
-# SETTINGS
-source ~/.bash_prompt
-
 # GIT
 alias ga="git add"
 alias gc="git commit -m "
@@ -19,16 +13,9 @@ alias ae='deactivate &> /dev/null; source ./env/bin/activate'
 alias de='deactivate'
 
 # BASH
-alias la='ls -la'
+alias la='ls -l'
 alias lah='ls -lah'
 alias path='echo -e ${PATH//:/\\n}'
-alias bashprofile="vi ~/.bash_profile && . ~/.bash_profile"
 
 # NAVIGATE
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-# SSH
-alias pie='ssh pi@tobiasegelund.local'

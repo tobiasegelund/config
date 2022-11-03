@@ -1,4 +1,4 @@
-1. fzf
-2. fd
-3. tmux
-4. brew
+fzf
+fd
+tmux
+brew
