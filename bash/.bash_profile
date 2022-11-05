@@ -26,9 +26,3 @@ alias bashprofile="vi ~/.bash_profile && . ~/.bash_profile"
 
 # NAVIGATE
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-# SSH
-alias pie='ssh pi@tobiasegelund.local'
