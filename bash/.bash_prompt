@@ -4,13 +4,16 @@ git_branch() {
 }
 
 # TERMINAL PROMPT
-PS1="\[\e[0;93m\]\u\[\e[m\]" # username
+PS1="[\d @ \t]" # date @ time
+PS1+=" \[\e[0;93m\]\u\[\e[m\]" # username
 PS1+=" " # space
 PS1+="\[\e[0;95m\]\w\[\e[m\]" # current directory
 PS1+="\[\e[0;92m\]\$(git_branch)\[\e[m\]" # current branch
 PS1+=" " # space
+PS1+="\n" # new line
 PS1+="$ "
-# PS1+=">> " # end prompt
+# PS1+="> "
+# PS1+=">> "
 export PS1;
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+# export CLICOLOR=1
+# export LSCOLORS=ExFxBxDxCxegedabagacad
