@@ -1,28 +1,26 @@
-unset TMUX
+# VIM
 [ "$VIMRUNTIME" ] && [ "$VIRTUAL_ENV" ] && source "$VIRTUAL_ENV/bin/activate"
 
-# SETTINGS
-source ~/.bash_prompt
+# RUST
+. "$HOME/.cargo/env"
 
-# GIT
-alias ga="git add"
-alias gc="git commit -m "
-alias gs="git status"
-alias gd="git diff"
-alias gb="git branch"
-alias gp="git push"
-alias gm="git checkout master"
-alias gl="git log --oneline --decorate"
+# LOAD DOTFILES
+for file in ~/.{prompt,aliases,exports}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
-# ENV
-alias ae='deactivate &> /dev/null; source ./env/bin/activate'
-alias de='deactivate'
+# ADD TAB COMPLETION FOR BASH COMMANDS
+if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
+	# Ensure existing Homebrew v1 completions continue to work
+	export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
+	source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
+elif [ -f /etc/bash_completion ]; then
+	source /etc/bash_completion;
+fi;
 
-# BASH
-alias la='ls -la'
-alias lah='ls -lah'
-alias path='echo -e ${PATH//:/\\n}'
-alias bashprofile="vi ~/.bash_profile && . ~/.bash_profile"
+# TAB COMPLETION FOR SSH
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# NAVIGATE
-alias ..="cd .."
+# AUTOCORRECT TYPOS WHEN CD
+shopt -s cdspell;
