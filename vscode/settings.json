@@ -1,31 +1,66 @@
 {
   "workbench.iconTheme": "eq-material-theme-icons-darker",
-  "editor.suggestSelection": "first",
-  "scm.alwaysShowActions": true,
-  "scm.alwaysShowRepositories": true,
-  "editor.formatOnSave": true,
-  "notebook.lineNumbers": "on",
+  "workbench.colorTheme": "Default Dark+",
+  "editor.tabSize": 2,
   "files.trimTrailingWhitespace": true,
   "editor.lightbulb.enabled": false,
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.autoImportCompletions": false,
-  "python.analysis.completeFunctionParens": true,
-
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "100"],
-  "editor.rulers": [100],
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
+  "editor.formatOnSave": true,
   "files.autoSave": "onFocusChange",
-  "jupyter.askForKernelRestart": false,
+  "editor.rulers": [100],
+
+  "files.exclude": {
+    "dist": true,
+    "**/*.pyc": true,
+    ".nyc_output": true,
+    "obj": true,
+    "bin": true,
+    "**/__pycache__": true,
+    "**/node_modules": true,
+    ".vscode-test": false,
+    ".vscode test": false,
+    "**/.mypy_cache/**": true
+  },
+  "search.exclude": {
+    "dist": true,
+    "**/node_modules": true,
+    "coverage": true,
+    "languageServer*/**": true,
+    ".vscode-test": true,
+    ".vscode test": true
+  },
   "[python]": {
     "editor.tabSize": 4,
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports.isort": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--line-length", "100"],
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.completeFunctionParens": true,
   },
-  "editor.tabSize": 2,
-  "workbench.colorTheme": "Default Dark+",
-  "extensions.ignoreRecommendations": true,
-  "svelte.enable-ts-plugin": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[JSON]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[YAML]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  "scm.alwaysShowActions": true,
+  "scm.alwaysShowRepositories": true,
+  "notebook.lineNumbers": "on",
+
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
   "search.smartCase": true
 }
 
