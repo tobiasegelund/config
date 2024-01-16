@@ -31,16 +31,12 @@
   "[python]": {
     "editor.tabSize": 4,
     "editor.formatOnType": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    // "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.organizeImports.isort": "explicit"
+      "source.fixAll": true,
+      "source.organizeImports": true
     },
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": ["--line-length", "100"],
-    "python.analysis.autoImportCompletions": false,
-    "python.analysis.completeFunctionParens": true,
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -54,6 +50,18 @@
   "[YAML]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "python.languageServer": "Default",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.completeFunctionParens": true,
+  "flake8.args": [
+    "--max-line-length=100"
+  ],
+
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
 
   "scm.alwaysShowActions": true,
   "scm.alwaysShowRepositories": true,
@@ -61,6 +69,7 @@
 
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "search.smartCase": true
+  "search.smartCase": true,
+  "git.confirmSync": false
 }
 
